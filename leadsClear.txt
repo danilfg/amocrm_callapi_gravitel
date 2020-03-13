@@ -1,0 +1,1 @@
+[{"id": 1472181, "responsible_user_id": "daniil", "main_contact": 79852721228, "count": 3}, {"id": 2036907, "responsible_user_id": "daniil", "main_contact": 79096546816, "count": 3}, {"id": 2039071, "responsible_user_id": "ilshat", "main_contact": 79852721228, "count": 3}, {"id": 2036873, "responsible_user_id": "ilshat", "main_contact": 74952302222, "count": 3}]
