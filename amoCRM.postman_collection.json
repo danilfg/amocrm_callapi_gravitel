@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "e78e84cd-1214-49af-9a85-c5f2bcefeeea",
+		"name": "amoCRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Установка соединения (старый метод)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"USER_LOGIN\": \"nd@gravitel.ru\",\n\t\"USER_HASH\": \"5e0db73b6bb4ddf46fcb4107090cffdcc5026961\"\n}"
+				},
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/private/api/auth.php?type=json",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"private",
+						"api",
+						"auth.php"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление ТЭГов",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"USER_LOGIN\": \"nd@gravitel.ru\",\n\t\"USER_HASH\": \"5e0db73b6bb4ddf46fcb4107090cffdcc5026961\",\n\t\"update\": [{\n\t\t\t\"id\": 2039071,\n\t\t\t\"tags\": \"НЕДОЗВОН\",\n\t\t\t\"updated_at\": 1584375835.7401876\n\t\t\t}]\n}"
+				},
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/api/v2/leads",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v2",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка Воронок и этапов",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/api/v2/pipelines",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v2",
+						"pipelines"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3139387",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка Сделок",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/api/v2/leads",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v2",
+						"leads"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение контакта по ссылке",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/api/v2/leads?id=2036907",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v2",
+						"leads"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2036907"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Установка соединения (новый метод)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "type",
+						"type": "text",
+						"value": "json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"USER_LOGIN\": \"nd@gravitel.ru\",\n\t\"USER_HASH\": \"5e0db73b6bb4ddf46fcb4107090cffdcc5026961\"\n}"
+				},
+				"url": {
+					"raw": "https://testcallapi.amocrm.ru/private/api/auth.php",
+					"protocol": "https",
+					"host": [
+						"testcallapi",
+						"amocrm",
+						"ru"
+					],
+					"path": [
+						"private",
+						"api",
+						"auth.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
