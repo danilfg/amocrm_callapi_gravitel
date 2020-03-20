@@ -3,7 +3,7 @@ import json  # Для записи в файл JSON
 import copy  # Для deepcopy
 import os.path  # Для проверки существования файла
 
-urlAmo = 'https://reginfo.amocrm.ru'
+urlAmo = 'https://testcallapi.amocrm.ru'
 
 urlAuthAmo = '/private/api/auth.php?type=json'
 urlPipeAmo = '/api/v2/pipelines'
@@ -13,27 +13,26 @@ urlLeadAmo = '/api/v2/leads'
 headers = {'Content-Type': 'application/json'}
 
 # Какой ID этапа для автообзвона
-reanimLeadsStatusId = 31363558
-telemarkLeadsStatusId = 31363768
+leadsStatusId = 32121847
 
 # В какой ID этапа переносим при дозвоне
 leadsStatusIdOk = 143
 
 # В какой отдел направлять вызов
-sipUri = '700@vats16119.gravitel.ru'
+sipUri = '726@test.gravitel.ru'
 
 # Cо скольки и до скольки автообзвон
-timeFrom = '10:00'
-timeTo = '16:00'
+timeFrom = '19:00'
+timeTo = '20:00'
 
 # ТОКЕН Call API
 tokenCallApi = '232c7a1e8be4f3e5bded4d7fa848018f'
 
 # Логин админа в АМО СРМ
-loginUserAmo = 'cco@fincultura.ru'
+loginUserAmo = 'nd@gravitel.ru'
 
 # Hash этого сотрудника
-hashUserAmo = '4c5de063e425de2a8b60e112cadd469199f8d1b6'
+hashUserAmo = '5e0db73b6bb4ddf46fcb4107090cffdcc5026961'
 
 # Какой ТЭГ проставляем при недозвоне
 tagLead = 'НЕДОЗВОН'
@@ -67,18 +66,10 @@ if 'title' in leads.keys():
 # Делаем из словаря список словарей
 leads = leads['_embedded']['items']
 
-leadsTemp = copy.deepcopy(leads)
-
 # Удаляем сделки, если этап не leadsStatusId
 for i in reversed(range(len(leads))):
-    if leads[i]['status_id'] != reanimLeadsStatusId:
+    if leads[i]['status_id'] != leadsStatusId:
         del leads[i]
-
-for i in reversed(range(len(leadsTemp))):
-    if leadsTemp[i]['status_id'] != telemarkLeadsStatusId:
-        del leadsTemp[i]
-
-leads.extend(leadsTemp)
 
 # Удаляем лишние ключи
 leadsClear = copy.deepcopy(leads)
@@ -139,4 +130,5 @@ else:
     dialoutidFile = open('dialoutid.txt', 'w')
     dialoutidFile.write(str(dialoutid))
     dialoutidFile.close()
+
 json.dump(leadsClear, open('DB_dialouts.json', 'w'))
