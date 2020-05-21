@@ -13,27 +13,27 @@ urlLeadAmo = '/api/v2/leads'
 headers = {'Content-Type': 'application/json'}
 
 # Какой ID этапа для автообзвона
-reanimLeadsStatusId = 31363558
-telemarkLeadsStatusId = 31363768
+reanimLeadsStatusId = 
+telemarkLeadsStatusId = 
 
 # В какой ID этапа переносим при дозвоне
-leadsStatusIdOk = 143
+leadsStatusIdOk = 
 
 # В какой отдел направлять вызов
-sipUri = '700@vats16119.gravitel.ru'
+sipUri = ''
 
 # Cо скольки и до скольки автообзвон
 timeFrom = '10:00'
 timeTo = '16:00'
 
 # ТОКЕН Call API
-tokenCallApi = '232c7a1e8be4f3e5bded4d7fa848018f'
+tokenCallApi = ''
 
 # Логин админа в АМО СРМ
-loginUserAmo = 'cco@fincultura.ru'
+loginUserAmo = ''
 
 # Hash этого сотрудника
-hashUserAmo = '4c5de063e425de2a8b60e112cadd469199f8d1b6'
+hashUserAmo = ''
 
 # Какой ТЭГ проставляем при недозвоне
 tagLead = 'НЕДОЗВОН'
